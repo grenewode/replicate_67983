@@ -1,7 +1,13 @@
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn it_works() {
-        assert_eq!(2 + 2, 4);
+pub trait Foo {
+    fn a_value(&self) -> u8;
+}
+
+pub struct Bar {
+    foo: Box<dyn Foo>,
+}
+
+impl Bar {
+    pub fn use_my_foo(&self) -> u8 {
+        self.foo.a_value()
     }
 }
