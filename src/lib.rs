@@ -1,9 +1,9 @@
-pub trait Foo {
-    fn a_value(&self) -> u8;
+pub struct Foo {
+    a_value: u8,
 }
 
 pub struct Bar {
-    foo: Box<dyn Foo>,
+    foo: Foo,
 }
 
 impl Bar {
